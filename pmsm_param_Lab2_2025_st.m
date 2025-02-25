@@ -59,17 +59,22 @@ GVSI=1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Current Control
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-tr=1e-3;  % desired response time
+tr=5e-3;  % desired response time
 Psif0=1.0*Psif;
 Rs0=1.0*Rs;
 Ld0=1.0*Ld;
 Lq0=1.0*Lq;
+
+
+% Actucal PI controller calculation
 tid= Ld0 / Rs0;
 Kpd= (3*Ld0) / tr;
 tiq= Lq0 / Rs0;
 Kpq= (3 * Lq0) / tr;
 Kid= Kpd / tid;
 Kiq= Kpq / tiq;
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Initial Values
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
