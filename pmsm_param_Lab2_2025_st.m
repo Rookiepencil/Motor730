@@ -16,6 +16,8 @@ Ts=Tp;     % sampling period
 Tsim=min([Tp Ts])/100;  % simulation step-size
 Tstep=0.10;
 Tf=0.5;
+fs = 10000;
+Ts_Dis = 1/fs;
 %%% PMSM Parameters %%%%%%%%%%%%%
 Pmrated=80e3;  % rated power
 Tmrated=240;   % rated torque
@@ -59,11 +61,20 @@ GVSI=1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Current Control
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-tr=5e-3;  % desired response time
+
+tr=1e-3;  % part 1 desired response time
+%tr=5e-3;  % part 5 desired response time
+
 Psif0=1.0*Psif;
 Rs0=1.0*Rs;
 Ld0=1.0*Ld;
 Lq0=1.0*Lq;
+
+% %Part6 Parameter
+% Psif0=1.0*Psif;
+% Rs0=1.5*Rs;
+% Ld0=2.0*Ld;
+% Lq0=0.5*Lq;
 
 
 % Actucal PI controller calculation
