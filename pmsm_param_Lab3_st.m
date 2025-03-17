@@ -148,7 +148,7 @@ Pm0=Tm0*Wm0;
 dTm0=0.20*Tmrated; 
 Id0=0;
 Iq0=Tm0/(3/2*Pp*Psif0);
-MTPA=0;  % if 1, then MTPA strategy ON
+MTPA=1;  % if 1, then MTPA strategy ON
 if MTPA==1
     Id0=interp1(Tref,Idopt,Tm0);  % MTPA LUT 
     Iq0=interp1(Tref,Iqopt,Tm0);  % MTPA LUT
