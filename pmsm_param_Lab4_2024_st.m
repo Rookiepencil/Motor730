@@ -141,9 +141,9 @@ else      axis([-Ismax*1.1 0 0 Ismax*1.1]), end
 %%% Position Sensing/Estimation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 s=tf('s');
-w0=2*pi*30;
-a=1;
-Kpll=1;
+w0=2*pi*300;
+a=5;
+Kpll=710000;
 wz=w0/a;
 wp=w0*a;
 FPLL=(s/wz+1)/(s/wp+1);
@@ -159,12 +159,12 @@ DPLL=Kpll*DFPLL*c2d(1/s^2,Ts,'zoh');
 bode(DPLL,'r')
 hold off
 %%% Sensorless gains
-b=0;
-ksi=0; 
+b=0.5;
+ksi=0.5; 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Initial Values
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Thetae0=0;
+Thetae0=-90;
 Wm0=3000*pi/30*0;
 Tm0=(kL+f)*Wm0;
 dTm0=Tmrated/2; 
